@@ -24,22 +24,42 @@ namespace CSharpLogic
 			//}
 
 
-			var str = DataFile.GetSampleData();
-			Console.WriteLine($"Length of string is:{str.Length}");
-			//Console.WriteLine($"Before reversing {str}");
-			var watch = System.Diagnostics.Stopwatch.StartNew();
-            // the code that you want to measure comes here
-            
-			var output = ReverseString(str);
-			watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-			//Console.WriteLine($"After reversing {output}");
-			Console.WriteLine($"Time taken: {elapsedMs}");
+			//var str = DataFile.GetSampleData();
+			//Console.WriteLine($"Length of string is:{str.Length}");
+			////Console.WriteLine($"Before reversing {str}");
+			//var watch = System.Diagnostics.Stopwatch.StartNew();
+			//         // the code that you want to measure comes here
+
+			//var output = ReverseString(str);
+			//watch.Stop();
+			//         var elapsedMs = watch.ElapsedMilliseconds;
+			////Console.WriteLine($"After reversing {output}");
+			//Console.WriteLine($"Time taken: {elapsedMs}");
+
+			Console.WriteLine(FindFiboRecursive(10));
 		
 			Console.ReadLine();
 
 
 		}
+
+		#region Find Fibonacci Number
+		private static int FindFiboRecursive(int a)
+        {
+			if (a == 0 || a == 1)
+				return a;
+			else
+				return FindFiboRecursive(a - 1) + FindFiboRecursive(a - 2);
+        }
+
+		private static int FindFibo(int a){
+			if (a == 0 || a == 1)
+				return a;
+			int firstNumber = 0, secondNumber = 1, result = 0;
+
+		}
+
+		#endregion
 
 		#region Reverse a String
 		private static string ReverseString(string input){
