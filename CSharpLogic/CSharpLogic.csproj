@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <Folder Include="Delegate\" />
+    <Folder Include="DataStructure\" />
+    <Folder Include="DataStructure\BinaryTree\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="program.exe" />

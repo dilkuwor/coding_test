@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Text.RegularExpressions;
+using CSharpLogic.DataStructure.BinaryTree;
 
 namespace CSharpLogic
 {
@@ -36,7 +37,25 @@ namespace CSharpLogic
 			////Console.WriteLine($"After reversing {output}");
 			//Console.WriteLine($"Time taken: {elapsedMs}");
 
-			Console.WriteLine(FindFiboRecursive(10));
+			//Console.WriteLine(FindFiboRecursive(10));
+			//Swap(10, 20);
+
+			//BinarySTree bst = new BinarySTree();
+			//int[] arr = new[] { 3, 2, 4, 1, 6 };
+			//for (int i = 0; i < arr.Length;i++)
+			//{
+			//	bst.Add(arr[i]);
+			//}
+			//bst.PreorderTraversal();
+
+			BinaryTree binaryTree = new BinaryTree();
+			var root = new Node(10);
+			binaryTree.root = root;
+			root.Left = new Node(20);
+			root.Right = new Node(8);
+			root.Left.Left = new Node(9);
+
+			binaryTree.PreorderTraversal();
 		
 			Console.ReadLine();
 
@@ -52,12 +71,12 @@ namespace CSharpLogic
 				return FindFiboRecursive(a - 1) + FindFiboRecursive(a - 2);
         }
 
-		private static int FindFibo(int a){
-			if (a == 0 || a == 1)
-				return a;
-			int firstNumber = 0, secondNumber = 1, result = 0;
+		//private static int FindFibo(int a){
+		//	if (a == 0 || a == 1)
+		//		return a;
+		//	int firstNumber = 0, secondNumber = 1, result = 0;
 
-		}
+		//}
 
 		#endregion
 
@@ -221,6 +240,17 @@ namespace CSharpLogic
             return words;
         }
 		#endregion
+
+		#region Swap Two Numbers without temp
+        public static void Swap(int a, int b)
+        {
+            Console.WriteLine($"Before swapping a={a}, b={b}");
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            Console.WriteLine($"After swapping a={a}, b={b}");
+        }
+        #endregion
 	}
 
 }
